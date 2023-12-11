@@ -16,8 +16,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Uint8List? _image;
 
 
-  void selectImage()async{
-    Uint8List im = await pickImage(ImageSource.gallery);
+  Future<void> selectImage()async{
+    Uint8List? im = await pickImage(ImageSource.gallery);
     setState(() {
       _image = im;
     });
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 20.0,),
             InkWell(
               onTap: ()async{
-                selectImage;
+                await selectImage();
               },
               child: Container(
                 child: Center(child: Text('UPLOAD IMAGE'),),

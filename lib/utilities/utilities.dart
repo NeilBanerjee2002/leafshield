@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -7,12 +8,14 @@ const kTextStyle = TextStyle(
   fontWeight: FontWeight.w200,
 );
 
-Future pickImage(ImageSource source) async {
-  final ImagePicker _imagePicker = ImagePicker();
+Future<Uint8List?> pickImage(ImageSource source) async {
+  try{final ImagePicker _imagePicker = ImagePicker();
 
   XFile? _file = await _imagePicker.pickImage(source: source);
   if (_file != null) {
     return await _file.readAsBytes();
+  }}catch(e){
+    print("$e");
+    return null;
   }
-  print("no image selected");
 }
