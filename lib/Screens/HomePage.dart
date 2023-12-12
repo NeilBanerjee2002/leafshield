@@ -1,6 +1,5 @@
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:leafshield/Screens/upload_screen.dart';
 import 'package:leafshield/utilities/utilities.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -13,15 +12,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Uint8List? _image;
-
-
-  Future<void> selectImage()async{
-    Uint8List? im = await pickImage(ImageSource.gallery);
-    setState(() {
-      _image = im;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +24,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Welcome to Leafshield !!',
-            style: kTextStyle,),
+            Card(child: Image.asset('images/leadfshield_logo.jpg', height: 250,)),
+            Container(
+              padding: EdgeInsets.only(left: 40.0, right: 20.0),
+              child: const Text('Welcome to Leafshield !! Upload an image of the diseased leaf to get the remedy',
+              style: kTextStyle,),
+            ),
             SizedBox(height: 20.0,),
             InkWell(
-              onTap: ()async{
-                await selectImage();
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Upload_Screen()),);
               },
               child: Container(
-                child: Center(child: Text('UPLOAD IMAGE'),),
+                child: Center(child: Text('TRY IT OUT)'),),
                 width: 180.0,
                 height: 40.0,
                 decoration: const ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
