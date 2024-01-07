@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "308882532688",
+    "project_id": "leaf-shield-93d74",
+    "storage_bucket": "leaf-shield-93d74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308882532688:android:5364f10421ced06118a455",
+        "android_client_info": {
+          "package_name": "com.example.leafshield"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBplHP8Y5pz_IfFc0T4urMT1kdA_Jrp_7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
