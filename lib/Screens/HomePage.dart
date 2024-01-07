@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Upload_Screen()),);
               },
               child: Container(
-                child: Center(child: Text('TRY IT OUT)'),),
+                child: Center(child: Text('PROCEED'),),
                 width: 180.0,
                 height: 40.0,
                 decoration: const ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
